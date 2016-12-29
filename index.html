@@ -1,0 +1,56 @@
+<html>
+<head>
+  <script
+	  src="https://code.jquery.com/jquery-2.2.4.min.js"
+	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  crossorigin="anonymous"></script>
+
+
+
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1847185632191368',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+function onload() {
+  function fbLogin() {
+    FB.login(function(response) {
+      FB.api(
+     response.authResponse.userID
+,
+    function (resp) {
+      if (resp && !resp.error) {
+      console.log(resp);
+      }
+    }
+);
+}, {scope: 'public_profile,email'});
+  }
+
+  $('button').on('click',fbLogin);
+}
+
+$(window).on('load',onload);
+
+</script>
+</head>
+<body>
+
+<button> facebook login </button>
+
+
+</body>
+</html>
