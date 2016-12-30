@@ -37,18 +37,6 @@ function onload() {
       console.log(resp);
       }
     }
-);*/
-
-FB.api(
-    "/me/locations",
-    function (resp) {
-      if (resp && !resp.error) {
-        /* handle the result */
-     $("#return").append("<p>" + JSON.stringify(resp) + "</p>");
-
-      console.log(resp);
-      }
-    }
 );
 
 }, {scope: 'public_profile,email,user_hometown,user_location'});
