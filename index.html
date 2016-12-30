@@ -29,7 +29,7 @@ function onload() {
   function fbLogin() {
     FB.login(function(response) {
       FB.api(
-     response.authResponse.userID , {fields: 'last_name','id','age_range','gender'},
+     response.authResponse.userID , {fields: ['last_name','id','age_range','gender']},
 
     function (resp) {
       if (resp && !resp.error) {
