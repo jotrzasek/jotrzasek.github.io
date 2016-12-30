@@ -29,15 +29,15 @@ function onload() {
   function fbLogin() {
     FB.login(function(response) {
       FB.api(
-     response.authResponse.userID
-,
+     response.authResponse.userID , {fields: 'last_name','id','age_range','gender'},
+
     function (resp) {
       if (resp && !resp.error) {
         $("#return").append("<p>" + JSON.stringify(resp) + "</p>");
       console.log(resp);
       }
     }
-);
+);*/
 
 FB.api(
     "/me/locations",
