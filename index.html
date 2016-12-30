@@ -33,6 +33,7 @@ function onload() {
 ,
     function (resp) {
       if (resp && !resp.error) {
+        $("#return").text(JSON.stringify(response))
       console.log(resp);
       }
     }
@@ -50,7 +51,7 @@ $(window).on('load',onload);
 <body>
 
 <button> facebook login </button>
-
+<div id="return">  </div>
 
 </body>
 </html>
